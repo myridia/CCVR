@@ -1,5 +1,8 @@
+
 # Count CouchDB View Requests
 Count CouchDB View Requests From a Haproxy Logs files 
+
+![CCRV](src/ccrv.svg?raw=true "CCRV")
 
 # How to run the Script File 
 
@@ -28,3 +31,6 @@ python main.py
 ./make_linux_binary.sh
 ./make_windows_binary.sh
 ```
+
+## Credits 
+* Logo from Arist Pawel Jot  https://openclipart.org/artist/paweo111 
