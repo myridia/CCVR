@@ -2,7 +2,7 @@
 # Count CouchDB View Requests
 Count CouchDB View Requests From a Haproxy Logs files 
 
-![CCRV](ccrv.png)
+![screenshot](igtccrv.png)
 
 # How to run the Script File 
 
