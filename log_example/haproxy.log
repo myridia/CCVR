@@ -1,0 +1,6 @@
+2024-07-23T00:23:13.468409+00:00 ha haproxy[1088]: 5.78.102.97:48838 [23/Jul/2024:00:23:13.460] http-in cluster_cb/couchdb1 0/0/0/7/7 200 702 - - ---- 15/2/43/43/0 0/0 "GET /sl_code/_design/get/_view/cats_and_secti\
+2024-07-23T00:23:13.468409+00:00 ha haproxy[1088]: 5.78.102.97:48838 [23/Jul/2024:00:23:13.460] http-in cluster_cb/couchdb1 0/0/0/7/7 200 702 - - ---- 15/2/43/43/0 0/0 "GET /sl_code/_design/get/_view/cats_and_secti\
+2024-07-23T00:23:13.468409+00:00 ha haproxy[1088]: 5.78.102.97:48838 [23/Jul/2024:00:23:13.460] http-in cluster_cb/couchdb1 0/0/0/7/7 200 702 - - ---- 15/2/43/43/0 0/0 "GET /sl_code/_design/get/_view/cats_and_secti\
+2024-07-23T00:23:13.468409+00:00 ha haproxy[1088]: 5.78.102.97:48838 [23/Jul/2024:00:23:13.460] http-in cluster_cb/couchdb1 0/0/0/7/7 200 702 - - ---- 15/2/43/43/0 0/0 "GET /foo/_design/get/_view/bar\
+2024-07-23T00:23:13.468409+00:00 ha haproxy[1088]: 5.78.102.97:48838 [23/Jul/2024:00:23:13.460] http-in cluster_cb/couchdb1 0/0/0/7/7 200 702 - - ---- 15/2/43/43/0 0/0 "GET /foofigher/_design/get/_view/barbar\
+
