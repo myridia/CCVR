@@ -1,17 +1,25 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 import os,re 
 import configparser
 import magic 
 import sortedcontainers
+from pathlib import Path
 
 class App():
   def __init__(self):
-    self.config = configparser.ConfigParser()
-    self.config.read(os.path.dirname(os.path.abspath(__file__))+'/config.ini')
+    print("...init")
+    config_file = Path('config.ini')
+    print("...looking for config file in {0}".format(config_file))    
+    if config_file.is_file():
+      self.config = configparser.ConfigParser()
+      self.config.read(config_file)
+    else:
+      print("...error: config.ini file does not exists! copy config_default.ini to config.ini and adjust it.")
+      return
+
     _dir = self.config['path']['dir_name']
     _file = self.config['path']['file_name_start']
     #created the reg at : https://regex101.com/
-    #regex = 'GET \/\w+\/_design\/\w+\/_view\/\w+'
     regex = 'GET \\/[a-zA-Z0-9_]+\\/_design\\/[a-zA-Z0-9_]+\\/_view\\/[a-zA-Z0-9_]+'    
     counter = sortedcontainers.SortedDict()
     if os.path.isdir(_dir):
@@ -21,7 +29,7 @@ class App():
             filepath = _dir + "/" + filename
             f = magic.Magic(mime=True)
             if f.from_file(filepath) == 'text/plain':
-              print(filepath)
+              print("...looking for: {}".format(filepath))
               with open(filepath, 'r') as f:
                 for l in f:
                   for match in re.finditer(regex, l, re.S):
@@ -34,5 +42,7 @@ class App():
                       counter[_id] += 1                      
     for i in counter:
       print("{0}\t{1}".format(counter[i],i))
+
+    
 if __name__ == "__main__":
   a = App()
