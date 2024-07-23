@@ -1,4 +1,4 @@
-# count_couchdb_view_requests
+# Count CouchDB View Requests
 Count CouchDB View Requests From a Haproxy Logs files 
 
 # How to run the Script File 
@@ -23,7 +23,7 @@ python main.py
 ```
 
 
-## To make a binary release for linux or windows try 
+## To make a binary release for linux or windows you can try 
 ```console
 ./make_linux_binary.sh
 ./make_windows_binary.sh
