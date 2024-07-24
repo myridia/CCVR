@@ -12,5 +12,10 @@ else
 fi
 
 
+if [ -d log_example ] #check if file exists
+then
+   echo "...copy log example"    
+   sudo cp log_example dist/ -rf 
+fi
 
 

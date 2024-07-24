@@ -1,13 +1,15 @@
 #!/usr/bin/env python
 import os,re 
 import configparser
-import magic 
 import sortedcontainers
 from pathlib import Path
+from binaryornot.check import is_binary
 
 class App():
   def __init__(self):
     print("...init")
+    
+  def check(self):  
     config_file = Path('config.ini')
     print("...looking for config file in {0}".format(config_file))    
     if config_file.is_file():
@@ -27,8 +29,7 @@ class App():
         for filename in file:
           if filename.startswith(_file):
             filepath = _dir + "/" + filename
-            f = magic.Magic(mime=True)
-            if f.from_file(filepath) == 'text/plain':
+            if is_binary(filepath) == False:
               print("...looking for: {}".format(filepath))
               with open(filepath, 'r') as f:
                 for l in f:
@@ -42,7 +43,7 @@ class App():
                       counter[_id] += 1                      
     for i in counter:
       print("{0}\t{1}".format(counter[i],i))
-
-    
+      
 if __name__ == "__main__":
   a = App()
+  a.check()
