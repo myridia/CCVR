@@ -1,5 +1,7 @@
 #!/bin/sh
 # See https://myridia.com/dev_posts/view/3489 for more info
+sudo rm dist -rf 
+sudo rm build -rf 
 
 docker run -v "$(pwd):/src/" batonogov/pyinstaller-linux "pyinstaller -F main.py"
 docker run -v "$(pwd):/src/" batonogov/pyinstaller-linux
