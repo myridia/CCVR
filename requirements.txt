@@ -1,3 +1,4 @@
 sortedcontainers
 binaryornot
-pydoc
+pyinstaller
+
