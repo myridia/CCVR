@@ -1,10 +1,9 @@
-# See https://myridia.com/dev_posts/view/3489 for more info 
+#!/bin/sh
 
-sudo rm dist -rf 
-sudo rm build -rf 
+rm -rf dist 
+rm -rf build
 
-docker run -v "$(pwd):/src/" batonogov/pyinstaller-linux "pyinstaller -F main.py"
-docker run -v "$(pwd):/src/" batonogov/pyinstaller-windows
+pyinstaller main.py -F -w -n ccvr_freebsd 
 
 if [ -f config.ini ] #check if file exists
 then
@@ -16,10 +15,16 @@ else
 fi
 
 
+
 if [ -d log_example ] #check if file exists
 then
    echo "...copy log example"    
-   sudo cp log_example dist/ -rf 
+   sudo cp -rf log_example dist/ 
 fi
 
+
+
+
+
+ 
 
